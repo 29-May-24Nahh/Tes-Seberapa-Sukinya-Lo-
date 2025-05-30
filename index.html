@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tes Seberapa Suki nya Lo?</title>
+  <style>
+    body {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #ffeaa7, #fab1a0);
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      font-size: 1.2em;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin: 10px;
+      font-family: inherit;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 2em;
+      font-weight: bold;
+      color: #2d3436;
+      text-shadow: 2px 2px #fff;
+    }
+
+    .emoji {
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SEBERAPA SUKI NYA LO? 🤓🔥</h1>
+
+  <input type="text" id="nameInput" placeholder="Masukin nama lo bang...">
+  <button onclick="cekSuki()">CEK SUKI 🤨🤓🤝🏻🤡💥</button>
+
+  <div id="result"></div>
+
+  <script>
+    function cekSuki() {
+      const name = document.getElementById("nameInput").value.trim();
+      if (name === "") {
+        alert("Masukin nama dulu bang 😭🫵🏻");
+        return;
+      }
+
+      const persen = Math.floor(Math.random() * 101);
+      let komentar = "";
+
+      if (persen > 90) {
+        komentar = "LU SUKI PARAH, GILA NIH ORANG 😨😱😳🗣🔥💥🤯";
+      } else if (persen > 75) {
+        komentar = "LU SUKI BANGET WOILAH 🤓🤡";
+      } else if (persen > 50) {
+        komentar = "SUKINYA SETENGAH-SETENGAH BRO 🗿☕️😹😅";
+      } else if (persen > 25) {
+        komentar = "YAH... MASIH SUKI DIKIT LAH 😔☝🏻🥲";
+      } else {
+        komentar = "GAK SUKI SAMA SEKALI 😭 NPC MODE ON! ✋️😐🤚";
+      }
+
+      document.getElementById("result").innerHTML =
+        `<span class="emoji">🗿☕️</span> ${name.toUpperCase()}, SUKINYA ${persen}%<br>${komentar}`;
+    }
+  </script>
+
+</body>
+</html>
